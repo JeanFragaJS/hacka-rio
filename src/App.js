@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import CreateUser from './components/CreateUser';
+import CreateEvent from './components/CreateEvent';
+import logo from './images/chama-rio-logo-2.png'
+
+const style = {
+  with: '150px',
+  height: '70px',
+  paddingRight: '10px',
+  marginTop: '10px',
+  position: 'absolute',
+  top: 0,
+  right: 0
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={logo} style={style}/>
+      <CreateUser/>
+      <CreateEvent/>
     </div>
   );
 }
