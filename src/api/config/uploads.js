@@ -38,7 +38,7 @@ const cloudinaryStorage = new CloudinaryStorage({
 
 
     return {
-      folder: "dkqneh6jt",
+      folder: "hacka",
       formats: ['jpeg', 'png', 'jpg'],
       public_id: fileName
     }

@@ -8,7 +8,7 @@ const  router = Router()
 const uploads = multer({storage}).fields([{name: 'images', maxCount: 6}])
 
 //router.post('/user/:clientId/pets', uploads, PetsController.create)
-router.post('/user', uploads, UserController.create)
+router.post('/user', uploads, UserController.create);
 // router.get('/pets', PetsController.show)
 
 

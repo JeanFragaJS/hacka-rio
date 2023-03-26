@@ -1,6 +1,8 @@
+import { Switch, Route } from "react-router-dom";
 import './App.css';
 import CreateUser from './components/CreateUser';
 import CreateEvent from './components/CreateEvent';
+import UserBox from "./components/UserBox";
 import logo from './images/chama-rio-logo-2.png'
 
 const style = {
@@ -16,10 +18,24 @@ const style = {
 function App() {
   return (
     <div className="App">
-      <img src={logo} style={style}/>
-      <CreateUser/>
-      <CreateEvent/>
-    </div>
+    <img src={logo} style={style}/>
+      <Route render={({location})=> (
+        <Switch location={location}>
+          <Route exact path="/cadastro" render={(routeProps)=> (
+            <CreateUser/>
+          )}/>
+
+          <Route exact path="/cadastro-evento" render={(routeProps)=> (
+            <CreateEvent/>
+          )}/>
+
+          <Route exact path="/user-page" render={(routeProps)=> (
+            <UserBox/>
+          )}/>
+        </Switch>
+        
+      )}/>
+  </div>
   );
 }
 

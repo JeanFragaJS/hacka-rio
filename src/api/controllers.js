@@ -5,16 +5,14 @@ const db =  require('./fake-db.js')
       try {
         const  {name, phone, email, role} = req.body; 
         let images  = req.files.images; 
-         
-        images = images.map(image =>{return {path: `${image.fieldname}-${Date.now()} ${image.originalname.toUpperCase()}`}})
+        let url = `http://localhost:8080/uploads/`
+        images = images.map(image =>{return {path: `${url}${image.filename}`}})
         const user = db.users = { name, phone, email, role, images: [...images]}; 
         res.send({user})
       } catch (error) {
         res.send({error})
-        //console.log(error)
       }
     }
-
    index (key) {
 
    }

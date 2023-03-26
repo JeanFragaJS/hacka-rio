@@ -3,16 +3,14 @@ import useFormState from '../hooks/useFormState';
 import injectSheet from 'react-jss';
 import {BiImageAdd} from 'react-icons/bi';
 import styles from '../style/CreateUserAndEvent'
+import api from '../api.js';
 
 
 
-// import api from '../services/api';
-// import {useHistory} from 'react-router-dom';
 
  function CreateUserWithRole (props) {
 
     const {classes} = props;
-
     const [name, setName] = useFormState('');
     const [phone, setPhone] = useFormState('');
     const [email, setEmail] = useFormState('');
@@ -42,22 +40,19 @@ import styles from '../style/CreateUserAndEvent'
 
     async function handleSubmit(event) {
       event.preventDefault();
+      const data = new FormData();
+ 
+      data.append('name', name);
+      data.append('phone', phone);
+      data.append('email', email);
+      data.append('role', role);
+      images.forEach(image => {
+        data.append('images', image);
+      });
 
-      const data = {name, phone, email, role, images}
-
-      let message;
-      const fields = ['name', 'phone', 'email', 'role'];
-      for (let field of fields) {
-        if (!data[field] || data[field] === 'Teste') {
-         message = `O campo ${field} vazio ou inválido !`
-         return alert(message)      
-        };
-      }
-
-      // await api.post('/clients', data)
-      // console.log(data)
-      // alert("Cadastro efetuado com sucesso");
-      // history.push('/clients')
+      const res = await api.post('/user', data); 
+      console.log(res)
+      alert("Cadastro efetuado com sucesso");
 
     }
 
