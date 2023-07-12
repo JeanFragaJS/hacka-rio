@@ -25,7 +25,7 @@
 ## Equipe
 - [Douglas Klem - Gerente de Banco de Dados](https://www.linkedin.com/in/klemdoug/)
 - [Suzyelle Silva - Gerente de P&D](https://www.linkedin.com/in/suzyellesalvino/)
-- [Jean Fraga Desenvolvedor](https://www.linkedin.com/in/devjeanfraga/)
+- [Jean Fraga - Desenvolvedor](https://www.linkedin.com/in/devjeanfraga/)
 - [Thiago Henrique - Gerente de Comunidade](https://www.linkedin.com/in/thiago-henrique-silva-3421aa171/)
 ## 📜 Licence 
 [MIT](https://choosealicense.com/licenses/mit/)
