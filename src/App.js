@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import { Switch, Route } from "react-router-dom";
 import './App.css';
 import CreateUser from './components/CreateUser';
@@ -16,13 +17,19 @@ const style = {
 }
 
 function App() {
+
+  const dataMerchant = JSON.parse(window.localStorage.getItem(''));
+  const [listMerchant, setListMerchant] = useState(dataMerchant || []);
+  const [listEvent, setListEvent] = useState(dataMerchant || []);
+
+
   return (
     <div className="App">
     <img src={logo} style={style}/>
       <Route render={({location})=> (
         <Switch location={location}>
           <Route exact path="/cadastro" render={(routeProps)=> (
-            <CreateUser/>
+            <CreateUser  />
           )}/>
 
           <Route exact path="/cadastro-evento" render={(routeProps)=> (
@@ -30,7 +37,7 @@ function App() {
           )}/>
 
           <Route exact path="/user-page" render={(routeProps)=> (
-            <UserBox/>
+            <UserBox />
           )}/>
         </Switch>
         

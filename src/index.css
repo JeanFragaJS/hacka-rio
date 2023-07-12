@@ -10,8 +10,8 @@
 
 body {
   
-  background: rgb(234,108,0);
-  background: linear-gradient(0deg, rgba(234,108,0,1) 55%, rgba(7,130,183,1) 94%);
+  background: rgb(178,119,217);
+  background: linear-gradient(0deg, rgba(178,119,217,1) 59%, rgba(250,128,91,1) 94%);
   background-repeat: no-repeat;
   height: 100%;
 }
